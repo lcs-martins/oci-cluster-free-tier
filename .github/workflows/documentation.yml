@@ -7,13 +7,12 @@ on:
     branches:
       - main
 
-strategy:
-  matrix:
-    module: [instance, vcn, compartment]
-
 jobs:
   docs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: [instance, vcn, compartment]
     steps:
     - uses: actions/checkout@v2
       with:
