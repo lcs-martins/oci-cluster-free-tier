@@ -1,0 +1,57 @@
+## provider 
+tenancy_ocid          = "" # E.g.: ocid1.tenancy.oc1..[  ocid_hash  ]
+user_ocid             = "" # E.g.: ocid1.user.oc1..[  ocid_hash  ]
+fingerprint           = "" # E.g.: [  hexadecimal fingerprint number  ]
+private_key_path      = "" # E.g.: .ssh/cluster.pem
+root_compartment_ocid = "" # E.g.: ocid1.compartment.oc1..[  ocid_hash  ]
+region                = "" # E.g.: us-ashburn-1
+
+## Compartment
+compartment_name        = "intances-cluster"
+compartment_description = "instances cluster compartment"
+
+## VCN
+# use existing
+subnet_ocid = ""
+# or create a new VCN with module
+vcn_cidr_block                 = "10.1.0.0/16"
+vcn_display_name               = "clusterVCN"
+vcn_dns_label                  = "clustervcn"
+sbnet_cidr_block               = "10.1.20.0/24"
+sbnet_display_name             = "clusterSubnet"
+sbnet_dns_label                = "clustersubnet"
+ig_display_name                = "clusterIG"
+rt_display_name                = "clusterRouteTable"
+rt_cidr_block_destination      = "0.0.0.0/0"
+rt_cidr_block_destination_type = "CIDR_BLOCK"
+sl_display_name                = "clusterSecurityList"
+egress_security_rules = {
+  default = {
+    protocol    = "6"
+    destination = "0.0.0.0/0"
+  }
+}
+ingress_security_rules = {
+  22 = {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+    tcp_options = {
+      max = "22"
+      min = "22"
+    }
+  },
+  80 = {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+    tcp_options = {
+      max = "80"
+      min = "80"
+    }
+  }
+}
+
+## VM
+instance_shape                      = "VM.Standard.A1.Flex"
+instance_ocpus                      = 1
+instance_shape_config_memory_in_gbs = 6
+ssh_public_key                      = "/mnt/c/Users/temp/.ssh/nomad-cluster.pub"
