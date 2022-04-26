@@ -11,9 +11,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1
       matrix:
         module: [instance, vcn, compartment]
+      max-parallel: 1
     steps:
     - uses: actions/checkout@v2
       with:
