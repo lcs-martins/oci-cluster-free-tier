@@ -51,6 +51,7 @@ ingress_security_rules = {
 }
 
 ## VM
+count_instances                     = 4
 instance_shape                      = "VM.Standard.A1.Flex"
 instance_ocpus                      = 1
 instance_shape_config_memory_in_gbs = 6

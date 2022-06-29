@@ -1,7 +1,8 @@
 resource "oci_core_instance" "intance" {
+  count = var.count_instances
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = var.compartment_ocid
-  display_name        = "intance0"
+  display_name        = "node-${count.index}"
   shape               = var.instance_shape
 
   shape_config {
@@ -12,8 +13,8 @@ resource "oci_core_instance" "intance" {
   create_vnic_details {
     subnet_id        = var.subnet_id
     display_name     = "primaryvnic"
-    assign_public_ip = true
-    hostname_label   = "intance0"
+    assign_public_ip = false
+    hostname_label   = "node-${count.index}"
   }
 
   source_details {

@@ -1,6 +1,6 @@
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
-  ad_number      = 1
+  ad_number      = 3
 }
 
 data "oci_core_images" "test_images" {

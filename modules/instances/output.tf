@@ -5,5 +5,5 @@ output "data_image" {
   depends_on  = []
 }
 output "ssh_key_authorized" {
-  value       = oci_core_instance.intance.metadata
+  value       = oci_core_instance.intance[*].metadata
 }

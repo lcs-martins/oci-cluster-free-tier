@@ -14,6 +14,8 @@ variable "ssh_public_key" {
   default = ""
 }
 
+variable "count_instances" { type = number }
+
 # Optional
 
 # default = VM.Standard.A1.Flex

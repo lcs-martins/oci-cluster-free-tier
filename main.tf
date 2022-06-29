@@ -32,6 +32,7 @@ module "new_vcn" {
 module "new_instances" {
   depends_on                          = [module.new_vcn.subnet_id]
   source                              = "./modules/instances/"
+  count_instances                     = var.count_instances
   compartment_ocid                    = module.new_compartment.id != "" ? module.new_compartment.id : var.root_compartment_ocid
   tenancy_ocid                        = var.tenancy_ocid
   instance_shape                      = var.instance_shape

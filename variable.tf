@@ -34,3 +34,4 @@ variable "instance_shape" {}
 variable "instance_ocpus" {}
 variable "instance_shape_config_memory_in_gbs" {}
 variable "ssh_public_key" {}
+variable "count_instances" {}
