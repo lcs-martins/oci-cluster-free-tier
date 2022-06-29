@@ -28,6 +28,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_compartment_ocid"></a> [compartment\_ocid](#input\_compartment\_ocid) | # provider Compartment OICD | `string` | n/a | yes |
+| <a name="input_count_instances"></a> [count\_instances](#input\_count\_instances) | n/a | `number` | n/a | yes |
 | <a name="input_instance_ocpus"></a> [instance\_ocpus](#input\_instance\_ocpus) | default = 1 free tier ocpus: 4 núcleos Ampere A1 based on Arm or 2 AMD based Compute VMs with 1/8 OCPU | `number` | `1` | no |
 | <a name="input_instance_shape"></a> [instance\_shape](#input\_instance\_shape) | More about shapes < https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm > | `string` | `"VM.Standard.A1.Flex"` | no |
 | <a name="input_instance_shape_config_memory_in_gbs"></a> [instance\_shape\_config\_memory\_in\_gbs](#input\_instance\_shape\_config\_memory\_in\_gbs) | default = 6 free tier ocpus: 24 GB, can be used in 4 VMs with 6 GB | `number` | `6` | no |
