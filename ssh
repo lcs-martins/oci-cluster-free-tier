@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $1 == "generate" ]; then
+       	ssh-keygen -t rsa -N "" -f cluster-ssh -q
+	echo 'Generated ssh key'
+elif [ $1 == "remove" ]; then 
+	rm -f cluster-ssh cluster-ssh.pub
+	echo 'Removed ssh key'
+else
+	echo "An error occurred when passing the parameter to the $0 script"
+fi
