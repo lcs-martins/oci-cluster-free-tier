@@ -29,6 +29,26 @@ module "new_vcn" {
   ingress_security_rules         = var.ingress_security_rules
 }
 
+# module "new_bucket" {
+#   depends_on                    = [module.new_compartment.id]
+#   source                        = "./modules/storage/"
+#   compartment_ocid              = module.new_compartment.id != "" ? module.new_compartment.id : var.root_compartment_ocid
+#   bucket_name                   = var.bucket_name
+# }
+# 
+# resource "null_resource" "ssh-generate" {
+#   depends_on                    = [module.new_bucket.id]
+#   provisioner "local-exec" {
+#     command = "ssh generate"
+#   }
+# }
+# 
+# module "upload" {
+#   depends_on            = [null_resource.ssh-generate]
+#   bucket_name           = var.bucket_name
+#   path_to_file          = "./cluster-ssh"
+# }
+
 module "new_instances" {
   depends_on                          = [module.new_vcn.subnet_id]
   source                              = "./modules/instances/"

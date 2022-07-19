@@ -28,8 +28,13 @@ variable "sl_display_name" {}
 variable "egress_security_rules" {}
 variable "ingress_security_rules" {}
 
-## VM
+# ## Bucket
+# variable "bucket_name" { type = string }
+# 
+# ## Object upload
+# variable "path_to_file" { type = string }
 
+## VM
 variable "instance_shape" {}
 variable "instance_ocpus" {}
 variable "instance_shape_config_memory_in_gbs" {}
