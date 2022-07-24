@@ -10,15 +10,15 @@ This repositóry is part of three repository, that join to build a cluster in OC
 
 #### Modules docs
 
-.
-├── ...
-├── [asd](asd)
-├── [asd](asd)
-├── [asd](asd)
-├── [asd](asd)
-├── [asd](asd)
-├── [asd](asd)
-└── ...
++ [modules](./modules)
+    + [compartments](./modules/compartments/README.md)
+    + [vcn](./modules/vcn/README.md)
+    + [instance](./modules/instances/README.md)
+    + [loadbalancer](./modules/loadbalancer/README.md)
+    + [database](./modules/database/README.md)
+    + [storage](./modules/storage/README.md)
+    + [object](./modules/object/README.md)
+
 
 #### Diagram
 
